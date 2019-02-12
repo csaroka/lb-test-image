@@ -1,14 +1,14 @@
-# lb-test-webserver
+# lbtest-websvr
 
 Continer image with Apache and PHP that echos the running instance's current IP address on the main page.
 
 #### Build in Docker or Pull Pre-Built Image
-`docker build -t lb-test-webserver .` \
+`docker build -t lbtest-websvr .` \
 Alternatively, pull the pre-built image: \
 `docker pull csaroka/showmeip:lts`
 
 #### Run in Docker
-`docker run -p 8080:80 -d lb-test-webserver`
+`docker run -p 8080:80 -d lbtest-websvr`
 
 #### Verify instance is reporting IP
 `curl localhost:8080`
@@ -17,14 +17,14 @@ Alternatively, pull the pre-built image: \
 `docker stop <Container-ID>`
 
 #### Ship to a private registry
-`docker tag lb-test-webserver harbor.lab.local/library/lb-test-webserver:v1` \
-`docker push harbor.lab.local/library/lb-test-webserver:v1`
+`docker tag lbtest-websvr harbor.lab.local/library/lbtest-websvr:v1` \
+`docker push harbor.lab.local/library/lbtest-websvr:v1`
 
 #### Create deployment on Kubernetes cluster
-`kubectl run lb-test-webserver --image=harbor.lab.local/library/lb-test-webserver:v1 --replicas=4 --port=80`
+`kubectl run lbtest-websvr --image=harbor.lab.local/library/lbtest-websvr:v1 --replicas=4 --port=80`
 
 #### Attach a LoadBalancer service to the deployment
-`kubectl expose deployment lb-test-webserver --port=80 --type=LoadBalancer`
+`kubectl expose deployment lbtest-websvr--port=80 --type=LoadBalancer`
 
 #### Get service External IP
 `kubectl get svc`
