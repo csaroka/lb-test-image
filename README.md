@@ -3,7 +3,7 @@
 Continer image with Apache and PHP that echos the running instance's current IP address on the main page.
 
 `git clone https://github.com/csaroka/lbtest-websvr.git`\
-`cd lbtest-websvr` \
+`cd lbtest-websvr`\
 
 #### Build in Docker or Pull Pre-Built Image
 `docker build -t lbtest-websvr .` \
